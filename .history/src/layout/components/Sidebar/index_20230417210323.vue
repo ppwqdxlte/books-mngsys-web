@@ -1,10 +1,3 @@
-<!--
- * @Author: laowang rxxxm@fxxl.com
- * @Date: 2023-04-01 16:40:14
- * @LastEditors: laowang
- * @LastEditTime: 2023-04-17 21:03:24
- * @Description: file content
--->
 <template>
   <div :class="{'has-logo':showLogo}">
     <logo v-if="showLogo" :collapse="isCollapse" />

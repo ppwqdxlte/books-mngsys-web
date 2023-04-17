@@ -1,10 +1,3 @@
-<!--
- * @Author: laowang rxxxm@fxxl.com
- * @Date: 2023-04-01 16:40:14
- * @LastEditors: laowang
- * @LastEditTime: 2023-04-17 21:03:24
- * @Description: file content
--->
 <template>
   <div :class="{'has-logo':showLogo}">
     <logo v-if="showLogo" :collapse="isCollapse" />
@@ -14,7 +7,7 @@
         :collapse="isCollapse"
         :background-color="variables.menuBg"
         :text-color="variables.menuText"
-        :unique-opened="true"
+        :unique-opened="false"
         :active-text-color="variables.menuActiveText"
         :collapse-transition="false"
         mode="vertical"
