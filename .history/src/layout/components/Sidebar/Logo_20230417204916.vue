@@ -26,7 +26,7 @@ export default {
     return {
       title: '学校图书管理系统',
       // logo: 'https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png'
-      logo: require('@/assets/logo/6342829.png') // 动态引入静态文件否则加载不到！
+      logo: require('@/assets/logo/4959897.png')
     }
   }
 }
