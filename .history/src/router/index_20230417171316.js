@@ -38,6 +38,12 @@ export const constantRoutes = [
   },
 
   {
+    path: '/404',
+    component: () => import('@/views/404'),
+    hidden: true
+  },
+
+  {
     path: '/',
     component: Layout,
     redirect: '/dashboard',
@@ -45,7 +51,7 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: '首页', icon: 'dashboard' }
+      meta: { title: 'Dashboard', icon: 'dashboard' }
     }]
   },
 
@@ -65,92 +71,16 @@ export const constantRoutes = [
         path: '/sysRoleList',
         name: 'SysRoleList',
         component: () => import('@/views/system/sysRoleList'),
-        meta: { title: '角色管理', icon: 'table' }
+        meta: { title: '角色管理', icon: 'role' }
       },
       {
         path: '/sysMenuList',
         name: 'SysMenuList',
         component: () => import('@/views/system/sysMenuList'),
-        meta: { title: '菜单管理', icon: 'tree' }
+        meta: { title: '菜单管理', icon: 'menu' }
       }
     ]
-  },
-  {
-    path: '/reader',
-    component: Layout,
-    name: 'Reader',
-    meta: { title: '读者管理', icon: 'el-icon-s-help' },
-    children: [
-      {
-        path: '/readerList',
-        name: 'ReaderList',
-        component: () => import('@/views/reader/readerList'),
-        meta: { title: '读者管理', icon: 'user' }
-      }
-    ]
-  },
-  {
-    path: '/book',
-    component: Layout,
-    name: 'Book',
-    meta: { title: '图书管理', icon: 'el-icon-s-help' },
-    children: [
-      {
-        path: '/bookCategory',
-        name: 'BookCategory',
-        component: () => import('@/views/book/bookCategory'),
-        meta: { title: '书籍分类', icon: 'table' }
-      },
-      {
-        path: '/bookList',
-        name: 'BookList',
-        component: () => import('@/views/book/bookList'),
-        meta: { title: '书籍管理', icon: 'form' }
-      }
-    ]
-  },
-  {
-    path: '/borrow',
-    component: Layout,
-    name: 'Borrow',
-    meta: { title: '借阅管理', icon: 'el-icon-s-help' },
-    children: [
-      {
-        path: '/borrowList',
-        name: 'BorrowList',
-        component: () => import('@/views/borrow/borrowList'),
-        meta: { title: '借书管理', icon: 'example' }
-      },
-      {
-        path: '/returnList',
-        name: 'ReturnList',
-        component: () => import('@/views/borrow/returnList'),
-        meta: { title: '还书管理', icon: 'link' }
-      },
-      {
-        path: '/borrowSearch',
-        name: 'BorrowSearch',
-        component: () => import('@/views/borrow/borrowSearch'),
-        meta: { title: '借阅查询', icon: 'table' }
-      }
-    ]
-  },
-  {
-    path: '/bulletin',
-    component: Layout,
-    name: 'Bulletin',
-    meta: { title: '公告管理', icon: 'el-icon-s-help' },
-    children: [
-      {
-        path: '/bulletinList',
-        name: 'BulletinList',
-        component: () => import('@/views/bulletin/bulletinList'),
-        meta: { title: '公告管理', icon: 'dashboard' }
-      }
-    ]
-  },
-  // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/404', hidden: true }
+  }
 ]
 
 /**
@@ -225,7 +155,10 @@ export const asyncRoutes = [
         meta: { title: 'External Link', icon: 'link' }
       }
     ]
-  }
+  },
+
+  // 404 page must be placed at the end !!!
+  { path: '*', redirect: '/404', hidden: true }
 ]
 
 const createRouter = () => new Router({

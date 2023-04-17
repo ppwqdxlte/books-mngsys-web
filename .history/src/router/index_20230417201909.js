@@ -225,7 +225,10 @@ export const asyncRoutes = [
         meta: { title: 'External Link', icon: 'link' }
       }
     ]
-  }
+  }，
+  
+  // 404 page must be placed at the end !!!
+  { path: '*', redirect: '/404', hidden: true }
 ]
 
 const createRouter = () => new Router({
