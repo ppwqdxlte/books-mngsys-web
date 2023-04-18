@@ -5,7 +5,7 @@
     <div :class="{ hasTagsView: needTagsView }" class="main-container">
       <div :class="{'fixed-header':fixedHeader}">
         <navbar />
-        <tags-view v-if="needTagsView"/>
+        <tags-view />
       </div>
       <app-main />
     </div>
@@ -94,15 +94,5 @@ export default {
 
   .mobile .fixed-header {
     width: 100%;
-  }
-
-  .hasTagsView {
-    .app-main {
-      min-height: calc(100vh - 84px);
-    }
-
-    .fixed-header+.app-main {
-      padding-top: 84px;
-    }
   }
 </style>
