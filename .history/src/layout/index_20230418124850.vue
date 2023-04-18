@@ -1,3 +1,10 @@
+<!--
+ * @Author: laowang rxxxm@fxxl.com
+ * @Date: 2023-04-01 16:40:14
+ * @LastEditors: laowang
+ * @LastEditTime: 2023-04-18 12:48:50
+ * @Description: file content
+-->
 <template>
   <div :class="classObj" class="app-wrapper">
     <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside" />

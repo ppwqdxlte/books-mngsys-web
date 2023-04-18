@@ -1,3 +1,10 @@
+<!--
+ * @Author: laowang rxxxm@fxxl.com
+ * @Date: 2023-04-01 16:40:14
+ * @LastEditors: laowang
+ * @LastEditTime: 2023-04-18 12:38:42
+ * @Description: file content
+-->
 <template>
   <section class="app-main">
     <transition name="fade-transform" mode="out-in">
@@ -14,9 +21,6 @@ export default {
   computed: {
     cachedViews() {
       return this.$store.state.tagsView.cachedViews
-    },
-    visitedViews() {
-      return this.$store.state.tagsView.visitedViews
     },
     key() {
       return this.$route.path

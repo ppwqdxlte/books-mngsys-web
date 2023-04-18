@@ -1,3 +1,10 @@
+<!--
+ * @Author: laowang rxxxm@fxxl.com
+ * @Date: 2023-04-01 16:40:14
+ * @LastEditors: laowang
+ * @LastEditTime: 2023-04-18 13:20:55
+ * @Description: file content
+-->
 <template>
   <section class="app-main">
     <transition name="fade-transform" mode="out-in">
@@ -35,6 +42,16 @@ export default {
 }
 .fixed-header+.app-main {
   padding-top: 50px;
+}
+
+.hasTagsView {
+  .app-main {
+    min-height: calc(100vh - 5.25rem);
+  }
+
+  .fixed-header+.app-main {
+    padding-top: 84px;
+  }
 }
 </style>
 

@@ -1,12 +1,19 @@
+<!--
+ * @Author: laowang rxxxm@fxxl.com
+ * @Date: 2023-04-01 16:40:14
+ * @LastEditors: laowang
+ * @LastEditTime: 2023-04-18 15:26:07
+ * @Description: file content
+-->
 <template>
   <div :class="classObj" class="app-wrapper">
     <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside" />
     <sidebar class="sidebar-container" />
-    <div class="main-container">
+    <div :class="{ hasTagsView: needTagsView }" class="main-container">
       <div :class="{'fixed-header':fixedHeader}">
         <navbar />
       </div>
-      <tags-view />
+      <tags-view v-if="needTagsView" />
       <app-main />
     </div>
   </div>
@@ -18,6 +25,11 @@ import ResizeMixin from './mixin/ResizeHandler'
 
 export default {
   name: 'Layout',
+  data() {
+    return {
+      needTagsView: true
+    }
+  },
   components: {
     Navbar,
     Sidebar,
@@ -91,5 +103,14 @@ export default {
 
   .mobile .fixed-header {
     width: 100%;
+  }
+  .hasTagsView {
+    .app-main {
+      min-height: calc(100vh - 84px);
+    }
+
+    .fixed-header+.app-main {
+      padding-top: 84px;
+    }
   }
 </style>

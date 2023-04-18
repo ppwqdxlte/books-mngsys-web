@@ -1,3 +1,10 @@
+/*
+ * @Author: laowang rxxxm@fxxl.com
+ * @Date: 2023-04-01 16:40:14
+ * @LastEditors: laowang
+ * @LastEditTime: 2023-04-18 12:59:41
+ * @Description: file content
+ */
 const getters = {
   sidebar: state => state.app.sidebar,
   device: state => state.app.device,

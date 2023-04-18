@@ -1,3 +1,10 @@
+/*
+ * @Author: laowang rxxxm@fxxl.com
+ * @Date: 2023-04-01 16:40:14
+ * @LastEditors: laowang
+ * @LastEditTime: 2023-04-18 12:53:26
+ * @Description: file content
+ */
 import Vue from 'vue'
 import Vuex from 'vuex'
 import getters from './getters'

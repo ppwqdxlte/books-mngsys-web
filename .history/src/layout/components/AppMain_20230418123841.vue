@@ -15,9 +15,6 @@ export default {
     cachedViews() {
       return this.$store.state.tagsView.cachedViews
     },
-    visitedViews() {
-      return this.$store.state.tagsView.visitedViews
-    },
     key() {
       return this.$route.path
     }
