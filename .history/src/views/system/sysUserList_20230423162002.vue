@@ -2,7 +2,7 @@
  * @Author: laowang rxxxm@fxxl.com
  * @Date: 2023-04-17 20:06:21
  * @LastEditors: laowang
- * @LastEditTime: 2023-04-23 16:45:59
+ * @LastEditTime: 2023-04-23 16:19:07
  * @Description: file content
 -->
 <template>
@@ -58,16 +58,9 @@
       @current-change="currentChange"
     />
     <!-- 新增或编辑弹框 -->
-    <sys-dialog
-      :title="dialog.title"
-      :visible="dialog.visible"
-      :width="dialog.width"
-      :height="dialog.height"
-      @onClose="onClose"
-      @onConfirm="onConfirm"
-    >
+    <sys-dialog>
       <!-- slot的属性值一定要和组件定义的保持一致 -->
-      <div slot="content" />
+      <div slot="content"></div>
     </sys-dialog>
   </el-main>
 </template>
@@ -107,14 +100,7 @@ export default {
         }
       ],
       // 表格高度,0仅为初始化值
-      tableHeight: 0,
-      // 弹窗属性
-      dialog: {
-        title: '新增用户',
-        visible: false,
-        width: 600,
-        height: 200
-      }
+      tableHeight: 0
     }
   },
   mounted() {
@@ -129,26 +115,14 @@ export default {
     resetBtn() {
     },
     addBtn() {
-      this.dialog.title = '新增用户'
-      this.dialog.visible = true
     },
     editBtn() {
-      this.dialog.title = '修改用户'
-      this.dialog.visible = true
     },
     deleteBtn() {
     },
     sizeChange(val) {
     },
     currentChange(val) {
-    },
-    // 弹窗关闭
-    onClose() {
-      this.dialog.visible = false
-    },
-    // 弹窗确定
-    onConfirm() {
-      this.dialog.visible = false
     }
   }
 }

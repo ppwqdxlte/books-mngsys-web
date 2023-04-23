@@ -2,7 +2,7 @@
  * @Author: laowang rxxxm@fxxl.com
  * @Date: 2023-04-23 13:51:10
  * @LastEditors: laowang
- * @LastEditTime: 2023-04-23 16:45:40
+ * @LastEditTime: 2023-04-23 16:39:32
  * @Description: file content
 -->
 <template>
@@ -47,7 +47,6 @@ export default {
   methods: {
     // 弹窗的关闭
     onClose() {
-      // 调用父组件的onClose方法，为啥有必要不在组件里写实现呢？因为组件的方法不同场景有不同实现，故而在哪里调用就在哪里定义！
       this.$emit('onClose')
     },
     // 弹窗的确定

@@ -2,7 +2,7 @@
  * @Author: laowang rxxxm@fxxl.com
  * @Date: 2023-04-17 20:06:21
  * @LastEditors: laowang
- * @LastEditTime: 2023-04-23 16:45:59
+ * @LastEditTime: 2023-04-23 16:35:29
  * @Description: file content
 -->
 <template>
@@ -67,7 +67,7 @@
       @onConfirm="onConfirm"
     >
       <!-- slot的属性值一定要和组件定义的保持一致 -->
-      <div slot="content" />
+      <div slot="content"></div>
     </sys-dialog>
   </el-main>
 </template>
