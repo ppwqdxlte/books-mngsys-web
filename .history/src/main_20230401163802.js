@@ -1,17 +1,10 @@
-/*
- * @Author: laowang rxxxm@fxxl.com
- * @Date: 2023-04-01 16:40:14
- * @LastEditors: laowang
- * @LastEditTime: 2023-04-23 13:35:22
- * @Description: file content
- */
 import Vue from 'vue'
 
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import locale from 'element-ui/lib/locale/lang/zh-CN' // lang i18n
+import locale from 'element-ui/lib/locale/lang/en' // lang i18n
 
 import '@/styles/index.scss' // global css
 

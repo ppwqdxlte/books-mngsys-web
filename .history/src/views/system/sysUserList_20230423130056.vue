@@ -2,7 +2,7 @@
  * @Author: laowang rxxxm@fxxl.com
  * @Date: 2023-04-17 20:06:21
  * @LastEditors: laowang
- * @LastEditTime: 2023-04-23 13:38:43
+ * @LastEditTime: 2023-04-23 13:00:56
  * @Description: file content
 -->
 <template>
@@ -51,7 +51,7 @@
       :page-size="userParamList.pageSize"
       :page-sizes="[10, 20, 40, 80, 100]"
       layout="total, sizes, prev, pager, next, jumper"
-      :total="userList.length"
+      :total="userParamList.totalNum"
       :pager-count="7"
       background
       @size-change="sizeChange"
@@ -70,7 +70,7 @@ export default {
         phone: '',
         currentPage: 1,
         pageSize: 10,
-        totalNum: 0 // 从后端获得实际数据，默认初始化为0而已
+        totalNum: 3 // 从后端获得实际数据，默认初始化为0而已
       },
       // 表格数据源
       userList: [
@@ -90,14 +90,14 @@ export default {
           address: '中国江西省吉安市吉安县'
         }
       ],
-      // 表格高度,0仅为初始化值
+      // 表格高度
       tableHeight: 0
     }
   },
   mounted() {
-    // 设置表格高度
     this.$nextTick(() => {
-      this.tableHeight = window.innerHeight - 200
+      // this.tableHeight = window.innerHeight - 200
+      this.tableHeight = window.innerHeight - this.components.ElPagination.height
     })
   },
   methods: {

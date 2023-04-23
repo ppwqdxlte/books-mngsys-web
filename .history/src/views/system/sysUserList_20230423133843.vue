@@ -51,7 +51,7 @@
       :page-size="userParamList.pageSize"
       :page-sizes="[10, 20, 40, 80, 100]"
       layout="total, sizes, prev, pager, next, jumper"
-      :total="userList.length"
+      :total="userParamList.totalNum"
       :pager-count="7"
       background
       @size-change="sizeChange"
@@ -70,7 +70,7 @@ export default {
         phone: '',
         currentPage: 1,
         pageSize: 10,
-        totalNum: 0 // 从后端获得实际数据，默认初始化为0而已
+        totalNum: 3 // 从后端获得实际数据，默认初始化为0而已
       },
       // 表格数据源
       userList: [

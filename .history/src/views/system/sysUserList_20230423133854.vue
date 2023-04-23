@@ -51,7 +51,7 @@
       :page-size="userParamList.pageSize"
       :page-sizes="[10, 20, 40, 80, 100]"
       layout="total, sizes, prev, pager, next, jumper"
-      :total="userList.length"
+      :total="userParamList.totalNum"
       :pager-count="7"
       background
       @size-change="sizeChange"

@@ -1,0 +1,34 @@
+<!--
+ * @Author: laowang rxxxm@fxxl.com
+ * @Date: 2023-04-17 20:06:21
+ * @LastEditors: laowang
+ * @LastEditTime: 2023-04-22 17:55:55
+ * @Description: file content
+-->
+<template>
+    <!-- el-main是element-UI的一个标签，逻辑功能等同于主区域的div -->
+    <el-main>
+        <!-- Main content -->
+        <!-- 搜索栏，el-form就是form标签，
+            :model      -绑定表单的数据（通常是一个对象）
+            ref         -相当于div的id, VUE可通过ref属性找到对应的标签
+            rules       -表单验证的规则
+            label-width -表单域标签的宽度
+            :inline     -是否同一行显示  -->
+        <el-form :model="form" ref="form" :rules="rules" label-width="80px" :inline="false" size="normal">
+            <el-form-item label="">
+                <el-input v-model="form."></el-input>
+            </el-form-item>
+            <el-form-item>
+                <el-button type="primary" @click="onSubmit">立即创建</el-button>
+                <el-button>取消</el-button>
+            </el-form-item>
+        </el-form>
+    </el-main>
+</template>
+
+<script>
+export default {}
+</script>
+
+<style lang="scss" scoped></style>

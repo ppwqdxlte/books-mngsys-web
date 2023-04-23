@@ -1,5 +1,4 @@
 .DS_Store
-# node_modules以后很多组件过期了都无法下载，会出现各种依赖问题，上传到github上太慢了，那么本地保存吧，同步到网盘中
 node_modules/
 dist/
 npm-debug.log*

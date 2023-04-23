@@ -2,7 +2,7 @@
  * @Author: laowang rxxxm@fxxl.com
  * @Date: 2023-04-17 20:06:21
  * @LastEditors: laowang
- * @LastEditTime: 2023-04-23 13:38:43
+ * @LastEditTime: 2023-04-23 12:14:24
  * @Description: file content
 -->
 <template>
@@ -32,7 +32,7 @@
     </el-form>
     <!-- 用户表格，el-form是表单，而el-table是表格，
         :data   -表格数据源(可以写死也可以从外部获得) -->
-    <el-table :height="tableHeight" :data="userList" border stripe>
+    <el-table :data="userList" border stripe>
       <el-table-column prop="name" label="姓名" />
       <el-table-column prop="address" label="地址" />
       <el-table-column prop="date" label="日期" />
@@ -44,19 +44,17 @@
     <!-- 分页,el-pagination标签，
         @size-change    -页面显示条数改变时触发
         @current-change -选中页面改变时触发
-        :pager-count    -？？当前显示几个可选页面？？
-        background      -？？这是啥属性？？ -->
+        :pager-count    -当前显示几个可选页面？？ -->
     <el-pagination
-      :current-page.sync="userParamList.currentPage"
-      :page-size="userParamList.pageSize"
-      :page-sizes="[10, 20, 40, 80, 100]"
+      :current-page.sync="currentPage"
+      :page-size="pageSize"
+      :page-sizes="[20, 40, 80, 100]"
       layout="total, sizes, prev, pager, next, jumper"
-      :total="userList.length"
-      :pager-count="7"
-      background
+      :total="totalNum"
       @size-change="sizeChange"
-      @current-change="currentChange"
-    />
+      @current-change="currentChange" background>
+      :pager-count="7">
+    </el-pagination>
   </el-main>
 </template>
 
@@ -67,10 +65,7 @@ export default {
       // 搜索参数列表
       userParamList: {
         nickName: '', // 数据库里的字段是nick_name，程序中使用驼峰命名
-        phone: '',
-        currentPage: 1,
-        pageSize: 10,
-        totalNum: 0 // 从后端获得实际数据，默认初始化为0而已
+        phone: ''
       },
       // 表格数据源
       userList: [
@@ -90,15 +85,10 @@ export default {
           address: '中国江西省吉安市吉安县'
         }
       ],
-      // 表格高度,0仅为初始化值
-      tableHeight: 0
+      currentPage: 1,
+      pageSize: 20,
+      totalNum: this.userList.size()
     }
-  },
-  mounted() {
-    // 设置表格高度
-    this.$nextTick(() => {
-      this.tableHeight = window.innerHeight - 200
-    })
   },
   methods: {
     searchBtn() {
@@ -110,10 +100,6 @@ export default {
     editBtn() {
     },
     deleteBtn() {
-    },
-    sizeChange(val) {
-    },
-    currentChange(val) {
     }
   }
 }
