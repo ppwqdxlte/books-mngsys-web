@@ -2,7 +2,7 @@
  * @Author: laowang rxxxm@fxxl.com
  * @Date: 2023-04-23 13:51:10
  * @LastEditors: laowang
- * @LastEditTime: 2023-04-23 17:29:32
+ * @LastEditTime: 2023-04-23 17:14:15
  * @Description: file content
 -->
 <template>
@@ -59,36 +59,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  // 当内容高度超过容器高度就会滚动
   .container {
     overflow-x: initial;
     overflow-y: auto;
   }
-  // 设置弹窗样式
   .el-dialog__wrapper {
-    // ::v-deep深度查找，找到为止
     ::v-deep .el-dialog {
       border-radius: 7px !important;
       .el-dialog__header {
         border-top-left-radius: 7px !important;
         border-top-right-radius: 7px !important;
         background-color: #409EFF;
-        height: 45px;
+        height: 50px;
         .el-dialog__title {
+          line-height: 50px;
           color: #FFF;
-          font-size: 15px;
-          font-weight: 700;
         }
-        .el-dialog__close {
-          color: white;
-        }
-      }
-      .el-dialog__body {
-        padding: 10px 10px !important;
-      }
-      .el-dialog__footer {
-        border-top: 1px #eee solid;
-        padding: 10px !important;
       }
     }
   }

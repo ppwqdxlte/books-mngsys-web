@@ -85,10 +85,10 @@ export default {
       }
       .el-dialog__body {
         padding: 10px 10px !important;
+        box-sizing: border-box;
       }
       .el-dialog__footer {
         border-top: 1px #eee solid;
-        padding: 10px !important;
       }
     }
   }

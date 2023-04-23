@@ -88,7 +88,6 @@ export default {
       }
       .el-dialog__footer {
         border-top: 1px #eee solid;
-        padding: 10px !important;
       }
     }
   }

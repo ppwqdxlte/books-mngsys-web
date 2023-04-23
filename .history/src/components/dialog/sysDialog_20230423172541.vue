@@ -2,7 +2,7 @@
  * @Author: laowang rxxxm@fxxl.com
  * @Date: 2023-04-23 13:51:10
  * @LastEditors: laowang
- * @LastEditTime: 2023-04-23 17:29:32
+ * @LastEditTime: 2023-04-23 17:25:41
  * @Description: file content
 -->
 <template>
@@ -82,13 +82,6 @@ export default {
         .el-dialog__close {
           color: white;
         }
-      }
-      .el-dialog__body {
-        padding: 10px 10px !important;
-      }
-      .el-dialog__footer {
-        border-top: 1px #eee solid;
-        padding: 10px !important;
       }
     }
   }
