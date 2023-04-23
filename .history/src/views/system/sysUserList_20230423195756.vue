@@ -162,7 +162,7 @@ export default {
         nickName: '',
         phone: '',
         email: '',
-        sex: '0', // 默认选中‘男’
+        sex: '',
         username: '',
         password: ''
       },

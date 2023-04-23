@@ -2,7 +2,7 @@
  * @Author: laowang rxxxm@fxxl.com
  * @Date: 2023-04-17 20:06:21
  * @LastEditors: laowang
- * @LastEditTime: 2023-04-23 19:57:56
+ * @LastEditTime: 2023-04-23 19:55:40
  * @Description: file content
 -->
 <template>
@@ -90,8 +90,8 @@
             <el-col :span="12" :offset="0">
               <el-form-item label="性别">
                 <el-radio-group v-model="addModel.sex" @change="sexOnChange">
-                  <el-radio :label="'0'">男</el-radio>
-                  <el-radio :label="'1'">女</el-radio>
+                  <el-radio :label="0" selected="true">男</el-radio>
+                  <el-radio :label="1">女</el-radio>
                 </el-radio-group>
               </el-form-item>
             </el-col>
@@ -162,7 +162,10 @@ export default {
         nickName: '',
         phone: '',
         email: '',
-        sex: '0', // 默认选中‘男’
+        sex: {
+          male: 1,
+          female: 2
+        },
         username: '',
         password: ''
       },

@@ -2,7 +2,7 @@
  * @Author: laowang rxxxm@fxxl.com
  * @Date: 2023-04-23 13:51:10
  * @LastEditors: laowang
- * @LastEditTime: 2023-04-23 19:14:24
+ * @LastEditTime: 2023-04-23 17:38:09
  * @Description: file content
 -->
 <template>
@@ -19,7 +19,7 @@
       <slot name="content" />
     </div>
     <span slot="footer" class="dialog-footer">
-      <el-button type="warning" @click="onClose">取消</el-button>
+      <el-button type="warning text" @click="onClose">取消</el-button>
       <el-button type="primary" @click="onConfirm">确定</el-button>
     </span>
   </el-dialog>

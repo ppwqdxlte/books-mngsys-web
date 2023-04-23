@@ -2,7 +2,7 @@
  * @Author: laowang rxxxm@fxxl.com
  * @Date: 2023-04-17 20:06:21
  * @LastEditors: laowang
- * @LastEditTime: 2023-04-23 19:57:56
+ * @LastEditTime: 2023-04-23 19:45:33
  * @Description: file content
 -->
 <template>
@@ -68,7 +68,7 @@
     >
       <!-- slot的属性值一定要和组件定义的保持一致 -->
       <div slot="content">
-        <el-form ref="addForm" :model="addModel" :rules="rules" label-width="80px" :inline="false" size="small" style="margin-right: 40px;margin-top: 15px;">
+        <el-form ref="addForm" :model="addModel" :rules="rules" label-width="80px" :inline="false" size="small">
           <el-row>
             <el-col :span="12" :offset="0">
               <el-form-item label="姓名">
@@ -83,28 +83,28 @@
           </el-row>
           <el-row>
             <el-col :span="12" :offset="0">
-              <el-form-item label="邮箱">
-                <el-input v-model="addModel.email" placeholder="请输入邮箱" />
+              <el-form-item label="邮箱" placeholder="请输入邮箱">
+                <el-input v-model="addModel.email" />
               </el-form-item>
             </el-col>
             <el-col :span="12" :offset="0">
               <el-form-item label="性别">
                 <el-radio-group v-model="addModel.sex" @change="sexOnChange">
-                  <el-radio :label="'0'">男</el-radio>
-                  <el-radio :label="'1'">女</el-radio>
+                  <el-radio v-model="addModel.sex.male" label="男" aria-checked="true" />
+                  <el-radio v-model="addModel.sex.female" label="女" />
                 </el-radio-group>
               </el-form-item>
             </el-col>
           </el-row>
           <el-row>
             <el-col :span="12" :offset="0">
-              <el-form-item label="账户">
-                <el-input v-model="addModel.username" placeholder="请输入账号" />
+              <el-form-item label="账户" placeholder="请输入账号">
+                <el-input v-model="addModel.username" />
               </el-form-item>
             </el-col>
             <el-col :span="12" :offset="0">
-              <el-form-item label="密码">
-                <el-input v-model="addModel.password" placeholder="请输入密码" />
+              <el-form-item label="密码" placeholder="请输入密码">
+                <el-input v-model="addModel.password" />
               </el-form-item>
             </el-col>
           </el-row>
@@ -162,7 +162,10 @@ export default {
         nickName: '',
         phone: '',
         email: '',
-        sex: '0', // 默认选中‘男’
+        sex: {
+          male: 1,
+          female: 2
+        },
         username: '',
         password: ''
       },
