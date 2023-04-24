@@ -2,7 +2,7 @@
  * @Author: laowang rxxxm@fxxl.com
  * @Date: 2023-04-17 20:06:21
  * @LastEditors: laowang
- * @LastEditTime: 2023-04-24 11:05:11
+ * @LastEditTime: 2023-04-24 10:35:21
  * @Description: file content
 -->
 <template>
@@ -169,17 +169,17 @@ export default {
       // 弹窗验证规则
       rules: {
         nickName: [{
-          trigger: ['blur', 'change'],
+          trigger: 'change',
           required: true,
           message: '姓名不得为空'
         }],
         phone: [{
-          trigger: ['blur', 'change'],
+          trigger: 'change',
           required: true,
           message: '电话号码不得为空'
         }],
         email: [{
-          trigger: ['blur', 'change'],
+          trigger: 'change',
           required: true,
           message: '邮箱不得为空'
         }],
@@ -189,12 +189,12 @@ export default {
           message: '请选择性别'
         }],
         username: [{
-          trigger: ['blur', 'change'],
+          trigger: 'change',
           required: true,
           message: '账号不得为空'
         }],
         password: [{
-          trigger: ['blur', 'change'],
+          trigger: 'change',
           required: true,
           message: '密码不得为空'
         }]
@@ -234,7 +234,10 @@ export default {
     onConfirm() {
       this.$refs.addRef.validate((valid) => {
         if (valid) {
+          alert('合法')
           this.dialog.visible = false
+        } else {
+          alert('不合法！')
         }
       })
     },

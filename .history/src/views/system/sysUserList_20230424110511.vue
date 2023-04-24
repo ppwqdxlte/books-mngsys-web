@@ -234,7 +234,10 @@ export default {
     onConfirm() {
       this.$refs.addRef.validate((valid) => {
         if (valid) {
+          alert('合法')
           this.dialog.visible = false
+        } else {
+          alert('不合法！')
         }
       })
     },

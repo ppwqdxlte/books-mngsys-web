@@ -2,7 +2,7 @@
  * @Author: laowang rxxxm@fxxl.com
  * @Date: 2023-04-23 13:51:10
  * @LastEditors: laowang
- * @LastEditTime: 2023-04-24 11:03:58
+ * @LastEditTime: 2023-04-24 11:01:27
  * @Description: file content
 -->
 <template>
@@ -54,7 +54,6 @@ export default {
     },
     // 弹窗的确定
     onConfirm() {
-      // 怪不得无法验证，TMLGB的我原来写成了onClose！不管外面怎么调用的这个组件，最终都会调这里指定好的父组件方法！
       this.$emit('onConfirm')
     }
   }

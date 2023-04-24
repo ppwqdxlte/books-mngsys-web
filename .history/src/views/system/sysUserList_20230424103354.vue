@@ -2,7 +2,7 @@
  * @Author: laowang rxxxm@fxxl.com
  * @Date: 2023-04-17 20:06:21
  * @LastEditors: laowang
- * @LastEditTime: 2023-04-24 11:05:11
+ * @LastEditTime: 2023-04-24 10:33:54
  * @Description: file content
 -->
 <template>
@@ -77,14 +77,14 @@
             </el-col>
             <el-col :span="12" :offset="0">
               <el-form-item label="电话" prop="phone">
-                <el-input v-model="addModel.phone" />
+                <el-input v-model="addModel.phone" placeholder="请输入电话号码" />
               </el-form-item>
             </el-col>
           </el-row>
           <el-row>
             <el-col :span="12" :offset="0">
               <el-form-item label="邮箱" prop="email">
-                <el-input v-model="addModel.email" />
+                <el-input v-model="addModel.email" placeholder="请输入邮箱" />
               </el-form-item>
             </el-col>
             <el-col :span="12" :offset="0">
@@ -99,12 +99,12 @@
           <el-row>
             <el-col :span="12" :offset="0">
               <el-form-item label="账户" prop="username">
-                <el-input v-model="addModel.username" />
+                <el-input v-model="addModel.username" placeholder="请输入账号" />
               </el-form-item>
             </el-col>
             <el-col :span="12" :offset="0">
               <el-form-item label="密码" prop="password">
-                <el-input v-model="addModel.password" />
+                <el-input v-model="addModel.password" placeholder="请输入密码" />
               </el-form-item>
             </el-col>
           </el-row>
@@ -159,27 +159,27 @@ export default {
       },
       // 弹窗数据
       addModel: {
-        nickName: null,
-        phone: null,
-        email: null,
+        nickName: '',
+        phone: '',
+        email: '',
         sex: '0', // 默认选中‘男’
-        username: null,
-        password: null
+        username: '',
+        password: ''
       },
       // 弹窗验证规则
       rules: {
         nickName: [{
-          trigger: ['blur', 'change'],
+          trigger: 'change',
           required: true,
           message: '姓名不得为空'
         }],
         phone: [{
-          trigger: ['blur', 'change'],
+          trigger: 'change',
           required: true,
           message: '电话号码不得为空'
         }],
         email: [{
-          trigger: ['blur', 'change'],
+          trigger: 'change',
           required: true,
           message: '邮箱不得为空'
         }],
@@ -189,12 +189,12 @@ export default {
           message: '请选择性别'
         }],
         username: [{
-          trigger: ['blur', 'change'],
+          trigger: 'change',
           required: true,
           message: '账号不得为空'
         }],
         password: [{
-          trigger: ['blur', 'change'],
+          trigger: 'change',
           required: true,
           message: '密码不得为空'
         }]
@@ -234,7 +234,10 @@ export default {
     onConfirm() {
       this.$refs.addRef.validate((valid) => {
         if (valid) {
+          alert('合法')
           this.dialog.visible = false
+        } else {
+          alert('不合法！')
         }
       })
     },
